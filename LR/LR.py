@@ -1,5 +1,5 @@
 import torch
-import numpy
+import numpy as np
 import sys
 import pickle
 import random
