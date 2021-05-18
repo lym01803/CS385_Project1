@@ -44,8 +44,12 @@ class LogisticRegression:
         return P
 
 if __name__ == '__main__':
+    if len(sys.argv) > 1:
+        filepath = sys.argv[1]
+    else:
+        filepath = '../data/data.pkl'
     print('loading...')
-    with open('../data/extra_data.pkl', 'rb') as f:
+    with open(filepath, 'rb') as f:
         D = pickle.load(f)
     print('loaded')
     X = D['train']['data']
@@ -91,8 +95,8 @@ if __name__ == '__main__':
             for number in range(10):
                 print('Number : {} : correct / total = {} / {} = {}'.format(number, correct[number], total[number], correct[number] / total[number]))
             print('Total ----- correct / total = {} / {} = {}'.format(correct[-1], total[-1], correct[-1] / total[-1]))
-        if (epoch + 1) % 25 == 0:
-            lr /= 2
+        # if (epoch + 1) % 25 == 0:
+            # lr /= 2
     
     X = D['test']['data']
     X = np.hstack((X.reshape(-1, X.shape[1]), np.ones((X.shape[0], 1))))
