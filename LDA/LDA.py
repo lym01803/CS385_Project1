@@ -16,6 +16,8 @@ class LDA_model:
         self.X_neg = X_neg.cuda()
         self.mu_pos = None
         self.mu_neg = None
+        self.mu_pos_beta = None
+        self.mu_neg_beta = None
         self.Sigma2_pos = None
         self.Sigma2_neg = None
         self.n_pos = None
@@ -36,6 +38,8 @@ class LDA_model:
         self.Sigma2_neg = torch.matmul(self.X_neg.T, self.X_neg) / self.X_neg.shape[0] - torch.matmul(self.mu_neg.view(-1, 1), self.mu_neg.view(1, -1))
         self.SW = self.n_pos * self.Sigma2_pos + self.n_neg * self.Sigma2_neg
         self.beta = torch.matmul(torch.inverse(self.SW + eps*torch.eye(self.dim).cuda()), self.mu_pos - self.mu_neg)
+        self.mu_pos_beta = torch.matmul(self.mu_pos, self.beta)
+        self.mu_neg_beta = torch.matmul(self.mu_neg, self.beta)
         self.sigma2_pos = torch.matmul(torch.matmul(self.beta, self.Sigma2_pos), self.beta)
         self.sigma2_neg = torch.matmul(torch.matmul(self.beta, self.Sigma2_neg), self.beta)
         self.threshold = torch.matmul(self.mu_neg, self.beta) * torch.sqrt(self.sigma2_pos) + torch.matmul(self.mu_pos, self.beta) * torch.sqrt(self.sigma2_neg)
@@ -51,7 +55,8 @@ class LDA_model:
         if self.beta is None:
             return None
         p = self.proj(X)
-        p = - ((p - self.mu_pos) ** 2) / (2 * self.sigma2_pos) 
+        # print(p.shape)
+        p = - ((p - self.mu_pos_beta) ** 2) / (2 * self.sigma2_pos) 
         return 1.0 / torch.sqrt(2 * math.pi * self.sigma2_pos) * torch.exp(p)
 
 if __name__ == '__main__':
@@ -101,11 +106,12 @@ if __name__ == '__main__':
         Pb = (torch.stack(Ps).T).cuda()
         predict_label = torch.argmax(Pb, dim=1)
         ground_truth = torch.argmax(Yb, dim=1)
+        # print(predict_label.shape, ground_truth.shape)
         total[-1] += predict_label.shape[0]
         correct[-1] += torch.sum(predict_label == ground_truth).item()
         for number in range(10):
-            total[number] += ground_truth[ground_truth == number]
-            correct[number] += torch.sum(predict_label[ground_truth])
+            total[number] += ground_truth[ground_truth == number].shape[0]
+            correct[number] += torch.sum(predict_label[ground_truth == number] == number).item()
     for number in range(10):
         print('Number : {} : correct / total = {} / {} = {}'.format(number, correct[number], total[number], correct[number] / total[number]))
     print('Test Total ----- correct / total = {} / {} = {}'.format(correct[-1], total[-1], correct[-1] / total[-1]))
