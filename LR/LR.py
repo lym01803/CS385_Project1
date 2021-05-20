@@ -105,7 +105,7 @@ if __name__ == '__main__':
     Y = label2onehot(Y)
     Y = torch.tensor(torch.from_numpy(Y), dtype=torch.float32).cuda()
     idx = [i for i in range(X.shape[0])]
-    batch_size = 64
+    batch_size = 256
     batch_num = (X.shape[0] - 1) // batch_size + 1
     total = [0 for i in range(11)]
     correct = [0 for i in range(11)]
