@@ -74,6 +74,8 @@ if __name__ == '__main__':
     Y = D['train']['label']
     Y = torch.tensor(torch.from_numpy(Y), dtype=torch.float32).cuda()
 
+    proj_for_plot = []
+
     LDAs = []
     for i in tqdm(range(10)):
         LDAs.append(LDA_model(
@@ -82,7 +84,11 @@ if __name__ == '__main__':
             X_neg=X[Y!=i]
         ))
         LDAs[-1].fit()
-    
+        proj_for_plot.append([LDAs[-1].proj(X[Y==i]).tolist(), LDAs[-1].proj(X[Y!=i]).tolist()])
+
+    with open('./proj_for_plot.pkl', 'wb') as f:
+        pickle.dump(proj_for_plot, f)
+
     X = D['test']['data']
     X = X.reshape(-1, X.shape[1])
     X = torch.tensor(torch.from_numpy(X), dtype=torch.float32).cuda()
