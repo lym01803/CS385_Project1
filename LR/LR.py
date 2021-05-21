@@ -13,7 +13,7 @@ class LogisticRegression:
         self.device = torch.device("cuda:0" if torch.cuda.is_available else "cpu")
         self.W = torch.zeros(dim).to(self.device)
         self.W.requires_grad = False # I do NOT use autograd. I calculate gradient by myself.
-        torch.nn.init.normal_(self.W, mean=0.0, std=1.0)
+        # torch.nn.init.normal_(self.W, mean=0.0, std=1.0)
 
         # For training
         self.epoch = 0
