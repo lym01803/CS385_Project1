@@ -4,6 +4,7 @@ import sys
 import os
 from sklearn.svm import SVC
 from tqdm import tqdm
+import random
 
 sys.path.append('..')
 from utils import *
@@ -19,6 +20,12 @@ if __name__ == '__main__':
     Y = D['train']['label']
     Y = label2onehot(Y)
     models = [SVC(C=1.0, kernel='rbf', cache_size=3000) for i in range(10)]
+
+    idx = [i for i in range(X.shape[0])]
+    random.shuffle(idx)
+    idx = np.array(idx[:10000])
+    X = X[idx]
+    Y = Y[idx]
 
     for number in tqdm(range(10)):
         models[number].fit(X, Y[:, number])
