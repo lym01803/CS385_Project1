@@ -75,6 +75,7 @@ if __name__ == '__main__':
     Y = torch.tensor(torch.from_numpy(Y), dtype=torch.float32).cuda()
 
     proj_for_plot = []
+
     LDAs = []
     for i in tqdm(range(10)):
         LDAs.append(LDA_model(
