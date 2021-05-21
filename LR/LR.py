@@ -43,6 +43,9 @@ class LogisticRegression:
         P = torch.sigmoid(torch.matmul(X, self.W))
         return P
 
+    def proj(self, X):
+        return torch.matmul(X.view(-1, self.dim), self.W)
+
 if __name__ == '__main__':
     if len(sys.argv) > 1:
         filepath = sys.argv[1]
@@ -60,6 +63,7 @@ if __name__ == '__main__':
     Y = torch.tensor(torch.from_numpy(Y), dtype=torch.float32).cuda()
     models = [LogisticRegression(dim=X.shape[1]) for i in range(10)]
     idx = [i for i in range(X.shape[0])]
+
     lr = 0.1
     for epoch in tqdm(range(100)):
         random.shuffle(idx)
@@ -97,13 +101,35 @@ if __name__ == '__main__':
             print('Total ----- correct / total = {} / {} = {}'.format(correct[-1], total[-1], correct[-1] / total[-1]))
         # if (epoch + 1) % 25 == 0:
             # lr /= 2
-    
+
+    # For plot
+    proj_for_plot = [[[], []] for num in range(10)]
+    print('making data for plot')
+    batch_size = 256
+    batch_num = (X.shape[0] - 1) // batch_size + 1
+    for b in tqdm(range(batch_num)):
+        batch_idx = idx[b*batch_size: b*batch_size+batch_size]
+        batch_idx = torch.tensor(batch_idx, dtype=torch.long).cuda()
+        Xb = torch.index_select(X, 0, batch_idx)
+        Yb = torch.index_select(Y, 0, batch_idx)
+        for model_num in range(10):
+            # models[model_num].train(Xb, Yb[:, model_num], lr=lr, Use_adam=True)
+            # print(Yb.shape, (Yb[:, model_num] == 1).shape, Xb[Yb[:, model_num] == 1].shape)
+            Xb_pos_proj = models[model_num].proj(Xb[Yb[:, model_num] == 1]).tolist()
+            Xb_neg_proj = models[model_num].proj(Xb[Yb[:, model_num] == 0]).tolist()
+            proj_for_plot[model_num][0] += Xb_pos_proj
+            proj_for_plot[model_num][1] += Xb_neg_proj
+    with open('./proj_for_plot.pkl', 'wb') as f:
+        pickle.dump(proj_for_plot, f)
+
+    # For test
     X = D['test']['data']
     X = np.hstack((X.reshape(-1, X.shape[1]), np.ones((X.shape[0], 1))))
     X = torch.tensor(torch.from_numpy(X), dtype=torch.float32).cuda()
     Y = D['test']['label']
     Y = label2onehot(Y)
     Y = torch.tensor(torch.from_numpy(Y), dtype=torch.float32).cuda()
+
     idx = [i for i in range(X.shape[0])]
     batch_size = 256
     batch_num = (X.shape[0] - 1) // batch_size + 1
