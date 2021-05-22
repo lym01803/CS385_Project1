@@ -3,6 +3,7 @@ import numpy as np
 import sys
 import pickle
 import random
+from tqdm import tqdm
 
 sys.path.append('..')
 from utils import *
