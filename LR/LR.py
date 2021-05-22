@@ -24,12 +24,18 @@ class LogisticRegression:
         self.G = torch.tensor(0.0).to(self.device)
         self.G.requires_grad = False
     
-    def train(self, X, Y, Use_adam=False, lr=0.001, gamma=0.9, beta=0.999, eps=1e-4):
+    def train(self, X, Y, Use_adam=False, lr=0.001, gamma=0.9, beta=0.999, eps=1e-4, ridge_lambda=None, lasso_lambda=None):
         # X: (batch, dim), Y: (batch, )
         X = X.view(-1, self.dim)
         Y = Y.view(-1)
         P = torch.sigmoid(torch.matmul(X, self.W))
         g = torch.matmul(Y - P, X)
+        # objective: max L' = L - lambda * norm2(W)
+        # gradient' = gradient - 2 * lambda * W
+        if not ridge_lambda is None:
+            g -= 2.0 * ridge_lambda * self.W
+        elif not lasso_lambda is None:
+            g -= lasso_lambda * torch.sign(self.W)
         if Use_adam:
             self.v = gamma * self.v + (1.0 - gamma) * g
             self.G = beta * self.G + (1.0 - beta) * torch.sum(g * g)
@@ -101,7 +107,10 @@ if __name__ == '__main__':
             print('Total ----- correct / total = {} / {} = {}'.format(correct[-1], total[-1], correct[-1] / total[-1]))
         # if (epoch + 1) % 25 == 0:
             # lr /= 2
-
+    # Is W sparse ?
+    for number in range(10):
+        w = models[number].W
+        print("number : {} ; norm2(W): {}\nnorm1(W): {}\nnorm1/norm2: {}".format(number, torch.norm(w).item(), torch.norm(w, 1).item(), torch.norm(w, 1).item() / torch.norm(w, 2).item()))
     # For plot
     proj_for_plot = [[[], []] for num in range(10)]
     print('making data for plot')

@@ -56,8 +56,11 @@ class LDA_model:
             return None
         p = self.proj(X)
         # print(p.shape)
-        p = - ((p - self.mu_pos_beta) ** 2) / (2 * self.sigma2_pos) 
-        return 1.0 / torch.sqrt(2 * math.pi * self.sigma2_pos) * torch.exp(p)
+        p_pos = - ((p - self.mu_pos_beta) ** 2) / (2 * self.sigma2_pos) 
+        p_pos = 1.0 / torch.sqrt(2 * math.pi * self.sigma2_pos) * torch.exp(p_pos)
+        p_neg = - ((p - self.mu_neg_beta) ** 2) / (2 * self.sigma2_neg)
+        p_neg = 1.0 / torch.sqrt(2 * math.pi * self.sigma2_neg) * torch.exp(p_neg)
+        return p_pos / (p_pos + p_neg)
 
 if __name__ == '__main__':
     if len(sys.argv) > 1:
