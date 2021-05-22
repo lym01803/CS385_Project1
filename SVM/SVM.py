@@ -36,7 +36,7 @@ if __name__ == '__main__':
     P = []
     for number in tqdm(range(10)):
         p = models[number].predict(X)
-        P.append(p + 0.01 * np.random.random(p.shape[0]))
+        P.append(p + 0.001 * np.random.random(p.shape[0]))
     P = np.stack(P).T
     Predict = np.argmax(P, axis=1)
     total = 0
