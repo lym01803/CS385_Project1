@@ -26,7 +26,7 @@ class KernelLR:
         self.G.requires_grad = False
 
 
-    def fit(self, max_epoch=500, Use_Adam=True, lr=0.1, gamma=0.9, beta=0.999, eps=1e-4):
+    def fit(self, max_epoch=500, Use_Adam=True, lr=1.0, gamma=0.9, beta=0.999, eps=1e-4):
         X = self.X
         Y = self.Y
         n = X.shape[0]
@@ -106,9 +106,34 @@ if __name__ == '__main__':
         D = pickle.load(f)
     sample = 10000
     X = D['train']['data'][:sample]
+    '''
+    X = np.array([
+        [0, 0],
+        [0, 1],
+        [1, 0],
+        [1, 1],
+        [2, 2], 
+        [2, 3],
+        [3, 2],
+        [3, 3],
+        [-5, 5],
+        [-6, 5],
+        [-5, 4],
+        [-4, 6],
+        [4, -2], 
+        [4, -1],
+        [3, -4],
+        [3, -4],
+        [-1, -1],
+        [-2, -2],
+        [-3, -3],
+        [-2, -3]
+    ])
+    '''
     X = np.hstack((X.reshape(-1, X.shape[1]), np.ones((X.shape[0], 1))))
     X = torch.tensor(torch.from_numpy(X), dtype=torch.float32).cuda()
     Y = D['train']['label'][:sample]
+    # Y = np.array([0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4])
     Y = label2onehot(Y)
     Y = torch.tensor(torch.from_numpy(Y), dtype=torch.float32).cuda()
     models = []
@@ -117,17 +142,35 @@ if __name__ == '__main__':
         models[num].fit()
     
     X = D['test']['data'][:sample]
+    '''
+    X = np.array([
+        [0.2, -0.1],
+        [0.2, 0.2],
+        [3, 5],
+        [4, 7],
+        [-3.2, 2.9],
+        [-2.0, 4.1],
+        [5.0, -2.0],
+        [3.0, -5.0],
+        [-2.1, -2.4],
+        [-3.5, -3.7]
+    ])
+    '''
     X = np.hstack((X.reshape(-1, X.shape[1]), np.ones((X.shape[0], 1))))
     X = torch.tensor(torch.from_numpy(X), dtype=torch.float32).cuda()
     Y = D['test']['label'][:sample]
+    # Y = np.array([0, 0, 1, 1, 2, 2, 3, 3, 4, 4])
     Y = label2onehot(Y)
     Y = torch.tensor(torch.from_numpy(Y), dtype=torch.float32).cuda()
     
     Ps = []
     for num in range(10):
         Ps.append(models[num].predict(X))
+        # print(models[num].Alpha)
     Ps = (torch.stack(Ps).T).cuda()
+    # print(Ps.tolist())
     predict_label = torch.argmax(Ps, dim=1)
+    # print(predict_label.tolist())
     ground_truth = torch.argmax(Y, dim=1)
     total = [0 for i in range(11)]
     correct = [0 for i in range(11)]
