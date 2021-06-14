@@ -72,7 +72,7 @@ scheduler = optim.lr_scheduler.ExponentialLR(opt, gamma=0.98)
 for epoch in tqdm(range(100)):
     model.train()
     loss_ = []
-    for i, (data, label) in enumerate(trainloader):
+    for i, (data, label) in tqdm(enumerate(trainloader)):
         data = data.cuda()
         label = label.cuda()
         model.zero_grad()
@@ -88,7 +88,7 @@ for epoch in tqdm(range(100)):
         total = 0
         correct = 0
         model.eval()
-        for i, (data, label) in enumerate(validoader):
+        for i, (data, label) in tqdm(enumerate(validoader)):
             data = data.cuda()
             label = label.cuda()
             with torch.no_grad():
