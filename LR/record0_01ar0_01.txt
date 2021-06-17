@@ -1,0 +1,154 @@
+loading...
+loaded
+Number : 0 : correct / total = 3908 / 4948 = 0.7898140662894099 ; independent acc = 0.9760705461594114
+Number : 1 : correct / total = 12516 / 13861 = 0.9029651540292908 ; independent acc = 0.9583794040159985
+Number : 2 : correct / total = 9309 / 10585 = 0.8794520547945206 ; independent acc = 0.965709761524496
+Number : 3 : correct / total = 7090 / 8497 = 0.8344121454631046 ; independent acc = 0.9471449827320256
+Number : 4 : correct / total = 6585 / 7458 = 0.8829444891391794 ; independent acc = 0.9759749921509208
+Number : 5 : correct / total = 5796 / 6882 = 0.8421970357454228 ; independent acc = 0.9671703727971388
+Number : 6 : correct / total = 4717 / 5727 = 0.823642395669635 ; independent acc = 0.9717842663499734
+Number : 7 : correct / total = 4767 / 5595 = 0.8520107238605898 ; independent acc = 0.97856860095281
+Number : 8 : correct / total = 3562 / 5045 = 0.7060455896927651 ; independent acc = 0.9632117067310974
+Number : 9 : correct / total = 3849 / 4659 = 0.8261429491307147 ; independent acc = 0.9754289692452598
+Total ----- correct / total = 62099 / 73257 = 0.8476869104658941
+Number : 0 : correct / total = 4227 / 4948 = 0.8542845594179467 ; independent acc = 0.977967975756583
+Number : 1 : correct / total = 12528 / 13861 = 0.9038308924320034 ; independent acc = 0.9591847878018482
+Number : 2 : correct / total = 9636 / 10585 = 0.9103448275862069 ; independent acc = 0.9664059407292136
+Number : 3 : correct / total = 7191 / 8497 = 0.8462986936565847 ; independent acc = 0.9496430375254242
+Number : 4 : correct / total = 6552 / 7458 = 0.8785197103781175 ; independent acc = 0.9765073644839402
+Number : 5 : correct / total = 5615 / 6882 = 0.8158965417029933 ; independent acc = 0.968767489796197
+Number : 6 : correct / total = 4670 / 5727 = 0.8154356556661428 ; independent acc = 0.9725896501358232
+Number : 7 : correct / total = 4686 / 5595 = 0.8375335120643431 ; independent acc = 0.9791555755763954
+Number : 8 : correct / total = 3724 / 5045 = 0.7381565906838454 ; independent acc = 0.9646859685763818
+Number : 9 : correct / total = 3603 / 4659 = 0.7733419188667096 ; independent acc = 0.9757429324160148
+Total ----- correct / total = 62432 / 73257 = 0.852232551155521
+Number : 0 : correct / total = 4070 / 4948 = 0.822554567502021 ; independent acc = 0.9784866975169608
+Number : 1 : correct / total = 12783 / 13861 = 0.9222278334896472 ; independent acc = 0.9585159097424137
+Number : 2 : correct / total = 9514 / 10585 = 0.8988190836088805 ; independent acc = 0.9674160831046862
+Number : 3 : correct / total = 7036 / 8497 = 0.8280569612804519 ; independent acc = 0.9513220579603314
+Number : 4 : correct / total = 6651 / 7458 = 0.8917940466613034 ; independent acc = 0.9766165690650723
+Number : 5 : correct / total = 5886 / 6882 = 0.8552746294681779 ; independent acc = 0.9691770069754426
+Number : 6 : correct / total = 4639 / 5727 = 0.8100226994936267 ; independent acc = 0.9723439398282758
+Number : 7 : correct / total = 4675 / 5595 = 0.8355674709562109 ; independent acc = 0.9784320952263947
+Number : 8 : correct / total = 3610 / 5045 = 0.7155599603567889 ; independent acc = 0.9639624882263811
+Number : 9 : correct / total = 3612 / 4659 = 0.7752736638763683 ; independent acc = 0.9753743669546937
+Total ----- correct / total = 62476 / 73257 = 0.8528331763517479
+Number : 0 : correct / total = 3996 / 4948 = 0.8075990299110751 ; independent acc = 0.9783365412179041
+Number : 1 : correct / total = 12814 / 13861 = 0.9244643243633216 ; independent acc = 0.9592939923829805
+Number : 2 : correct / total = 9493 / 10585 = 0.8968351440717998 ; independent acc = 0.9677709979933659
+Number : 3 : correct / total = 6926 / 8497 = 0.8151112157231964 ; independent acc = 0.9518271291480678
+Number : 4 : correct / total = 6452 / 7458 = 0.8651112898900509 ; independent acc = 0.975824835851864
+Number : 5 : correct / total = 5954 / 6882 = 0.8651554780587039 ; independent acc = 0.9678392508565734
+Number : 6 : correct / total = 4701 / 5727 = 0.820848611838659 ; independent acc = 0.9729582155971443
+Number : 7 : correct / total = 4733 / 5595 = 0.8459338695263628 ; independent acc = 0.9791555755763954
+Number : 8 : correct / total = 3710 / 5045 = 0.7353815659068385 ; independent acc = 0.9651773891914766
+Number : 9 : correct / total = 3834 / 4659 = 0.8229233741146169 ; independent acc = 0.9767803759367706
+Total ----- correct / total = 62613 / 73257 = 0.8547033048036365
+Number : 0 : correct / total = 4095 / 4948 = 0.8276071139854486 ; independent acc = 0.97856860095281
+Number : 1 : correct / total = 12757 / 13861 = 0.9203520669504365 ; independent acc = 0.9598536658612828
+Number : 2 : correct / total = 9350 / 10585 = 0.8833254605573926 ; independent acc = 0.9668291084811008
+Number : 3 : correct / total = 6783 / 8497 = 0.7982817464987643 ; independent acc = 0.9522639474725965
+Number : 4 : correct / total = 6574 / 7458 = 0.881469562885492 ; independent acc = 0.9768076770820536
+Number : 5 : correct / total = 5837 / 6882 = 0.8481546062191223 ; independent acc = 0.9701188964877077
+Number : 6 : correct / total = 4847 / 5727 = 0.8463418892963157 ; independent acc = 0.9727125052895969
+Number : 7 : correct / total = 4957 / 5595 = 0.8859696157283289 ; independent acc = 0.9794422376018674
+Number : 8 : correct / total = 3646 / 5045 = 0.7226957383548067 ; independent acc = 0.9645494628499666
+Number : 9 : correct / total = 3752 / 4659 = 0.8053230306932818 ; independent acc = 0.9766438702103554
+Total ----- correct / total = 62598 / 73257 = 0.8544985462140137
+Number : 0 : correct / total = 3986 / 4948 = 0.8055780113177041 ; independent acc = 0.9782000354914888
+Number : 1 : correct / total = 12777 / 13861 = 0.9217949642882909 ; independent acc = 0.9596352566990185
+Number : 2 : correct / total = 9469 / 10585 = 0.8945677846008503 ; independent acc = 0.9679757565829886
+Number : 3 : correct / total = 7059 / 8497 = 0.8307637989878781 ; independent acc = 0.9521683934641059
+Number : 4 : correct / total = 6681 / 7458 = 0.8958165728077232 ; independent acc = 0.9763435576122418
+Number : 5 : correct / total = 5692 / 6882 = 0.8270851496657948 ; independent acc = 0.9694773195735561
+Number : 6 : correct / total = 4725 / 5727 = 0.8250392875851231 ; independent acc = 0.9729991673150689
+Number : 7 : correct / total = 4864 / 5595 = 0.8693476318141198 ; independent acc = 0.9796196950462072
+Number : 8 : correct / total = 3626 / 5045 = 0.7187314172447968 ; independent acc = 0.9646586674310987
+Number : 9 : correct / total = 3745 / 4659 = 0.8038205623524362 ; independent acc = 0.9771625919707332
+Total ----- correct / total = 62624 / 73257 = 0.8548534611026932
+Number : 0 : correct / total = 4143 / 4948 = 0.8373080032336297 ; independent acc = 0.9789508169867726
+Number : 1 : correct / total = 12757 / 13861 = 0.9203520669504365 ; independent acc = 0.9597990635707168
+Number : 2 : correct / total = 9451 / 10585 = 0.8928672649976381 ; independent acc = 0.9676754439848751
+Number : 3 : correct / total = 6872 / 8497 = 0.8087560315405438 ; independent acc = 0.9530829818310879
+Number : 4 : correct / total = 6525 / 7458 = 0.8748994368463395 ; independent acc = 0.9763299070396003
+Number : 5 : correct / total = 5867 / 6882 = 0.8525138041267073 ; independent acc = 0.9701188964877077
+Number : 6 : correct / total = 4627 / 5727 = 0.8079273616203946 ; independent acc = 0.9726033007084647
+Number : 7 : correct / total = 4808 / 5595 = 0.8593386952636283 ; independent acc = 0.9794695387471505
+Number : 8 : correct / total = 3888 / 5045 = 0.7706640237859267 ; independent acc = 0.9656551592339299
+Number : 9 : correct / total = 3750 / 4659 = 0.8048937540244687 ; independent acc = 0.9767530747914875
+Total ----- correct / total = 62688 / 73257 = 0.8557270977517507
+Number : 0 : correct / total = 4177 / 4948 = 0.8441794664510913 ; independent acc = 0.9789644675594141
+Number : 1 : correct / total = 12432 / 13861 = 0.8969049852103023 ; independent acc = 0.9578333811103376
+Number : 2 : correct / total = 9536 / 10585 = 0.9008974964572508 ; independent acc = 0.968194165745253
+Number : 3 : correct / total = 6568 / 8497 = 0.7729786983641285 ; independent acc = 0.9500525547046699
+Number : 4 : correct / total = 6710 / 7458 = 0.8997050147492626 ; independent acc = 0.9768759299452612
+Number : 5 : correct / total = 5922 / 6882 = 0.8605056669572798 ; independent acc = 0.9698731861801603
+Number : 6 : correct / total = 4816 / 5727 = 0.8409289331237996 ; independent acc = 0.972821709870729
+Number : 7 : correct / total = 4813 / 5595 = 0.8602323503127792 ; independent acc = 0.9799473087896037
+Number : 8 : correct / total = 3863 / 5045 = 0.7657086223984143 ; independent acc = 0.9656005569433638
+Number : 9 : correct / total = 3878 / 4659 = 0.832367460828504 ; independent acc = 0.9769305322358273
+Total ----- correct / total = 62715 / 73257 = 0.8560956632130717
+Number : 0 : correct / total = 4134 / 4948 = 0.8354890864995957 ; independent acc = 0.9788143112603573
+Number : 1 : correct / total = 12805 / 13861 = 0.9238150205612871 ; independent acc = 0.9597854129980753
+Number : 2 : correct / total = 9468 / 10585 = 0.8944733112895606 ; independent acc = 0.9679894071556302
+Number : 3 : correct / total = 6893 / 8497 = 0.8112274920560197 ; independent acc = 0.9528099703782573
+Number : 4 : correct / total = 6582 / 7458 = 0.8825422365245374 ; independent acc = 0.9765346656292232
+Number : 5 : correct / total = 5782 / 6882 = 0.8401627433885498 ; independent acc = 0.9700642941971416
+Number : 6 : correct / total = 4857 / 5727 = 0.8480880041906758 ; independent acc = 0.9725077466999741
+Number : 7 : correct / total = 4666 / 5595 = 0.8339588918677391 ; independent acc = 0.9787324078245082
+Number : 8 : correct / total = 3616 / 5045 = 0.7167492566897918 ; independent acc = 0.964535812277325
+Number : 9 : correct / total = 3858 / 4659 = 0.8280746941403735 ; independent acc = 0.9771079896801671
+Total ----- correct / total = 62661 / 73257 = 0.8553585322904296
+Number : 0 : correct / total = 4128 / 4948 = 0.8342764753435732 ; independent acc = 0.9787324078245082
+Number : 1 : correct / total = 12811 / 13861 = 0.9242478897626434 ; independent acc = 0.959621606126377
+Number : 2 : correct / total = 9382 / 10585 = 0.8863486065186584 ; independent acc = 0.9667881567631762
+Number : 3 : correct / total = 6908 / 8497 = 0.8129928209956455 ; independent acc = 0.9527826692329743
+Number : 4 : correct / total = 6671 / 7458 = 0.8944757307589166 ; independent acc = 0.9765346656292232
+Number : 5 : correct / total = 5933 / 6882 = 0.8621040395233943 ; independent acc = 0.9694363678556316
+Number : 6 : correct / total = 4650 / 5727 = 0.8119434258774227 ; independent acc = 0.9727534570075215
+Number : 7 : correct / total = 4683 / 5595 = 0.8369973190348525 ; independent acc = 0.9783092400726211
+Number : 8 : correct / total = 3721 / 5045 = 0.7375619425173439 ; independent acc = 0.9654913523622316
+Number : 9 : correct / total = 3734 / 4659 = 0.8014595406739644 ; independent acc = 0.9768349782273367
+Total ----- correct / total = 62621 / 73257 = 0.8548125093847687
+number : 0 ; norm2(W): 12.573516845703125
+norm1(W): 382.1988525390625
+norm1/norm2: 30.39713210148322
+number : 1 ; norm2(W): 11.178852081298828
+norm1(W): 345.3349304199219
+norm1/norm2: 30.891806055617717
+number : 2 ; norm2(W): 12.212407112121582
+norm1(W): 379.54473876953125
+norm1/norm2: 31.078618267876873
+number : 3 ; norm2(W): 13.985472679138184
+norm1(W): 424.64776611328125
+norm1/norm2: 30.363490448679567
+number : 4 ; norm2(W): 12.305023193359375
+norm1(W): 378.7346496582031
+norm1/norm2: 30.77886515992867
+number : 5 ; norm2(W): 12.04691219329834
+norm1(W): 373.11676025390625
+norm1/norm2: 30.97198304985322
+number : 6 ; norm2(W): 12.353035926818848
+norm1(W): 387.7840576171875
+norm1/norm2: 31.391801976006203
+number : 7 ; norm2(W): 11.319183349609375
+norm1(W): 354.8598937988281
+norm1/norm2: 31.350308837525308
+number : 8 ; norm2(W): 13.676017761230469
+norm1(W): 405.3515625
+norm1/norm2: 29.63959023577119
+number : 9 ; norm2(W): 12.02336597442627
+norm1(W): 365.009033203125
+norm1/norm2: 30.358306815204674
+making data for plot
+Number : 0 : correct / total = 1498 / 1744 = 0.8589449541284404 ; independent acc = 0.9675783650891211
+Number : 1 : correct / total = 4397 / 5099 = 0.8623259462639733 ; independent acc = 0.9504456054087277
+Number : 2 : correct / total = 3524 / 4149 = 0.8493612918775608 ; independent acc = 0.9561309157959434
+Number : 3 : correct / total = 2257 / 2882 = 0.7831367106176267 ; independent acc = 0.9420712968653965
+Number : 4 : correct / total = 2180 / 2523 = 0.8640507332540627 ; independent acc = 0.9706515058389674
+Number : 5 : correct / total = 1931 / 2384 = 0.80998322147651 ; independent acc = 0.9670021511985248
+Number : 6 : correct / total = 1473 / 1977 = 0.7450682852807283 ; independent acc = 0.9662338660110633
+Number : 7 : correct / total = 1666 / 2019 = 0.8251609707776126 ; independent acc = 0.9740703749231715
+Number : 8 : correct / total = 1091 / 1660 = 0.6572289156626506 ; independent acc = 0.9596266133988937
+Number : 9 : correct / total = 1239 / 1595 = 0.7768025078369906 ; independent acc = 0.9705362630608482
+Test Total ----- correct / total = 21256 / 26032 = 0.8165334972341733

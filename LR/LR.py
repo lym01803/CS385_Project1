@@ -22,15 +22,22 @@ class LogisticRegression:
         # For adam
         self.v = torch.zeros(dim).to(self.device)
         self.v.requires_grad = False
-        self.G = torch.tensor(0.0).to(self.device)
+        # There are some mistakes in my previous Adam
+        # self.G = torch.tensor(0.0).to(self.device)
+        # self.G.requires_grad = False
+        self.G = torch.zeros(dim).to(self.device)
         self.G.requires_grad = False
     
-    def train(self, X, Y, Use_adam=False, lr=0.001, gamma=0.9, beta=0.999, eps=1e-4, ridge_lambda=None, lasso_lambda=None):
+    def train(self, X, Y, Use_adam=False, lr=0.001, gamma=0.9, beta=0.999, eps=1e-4, ridge_lambda=None, lasso_lambda=None, Wb=None):
         # X: (batch, dim), Y: (batch, )
         X = X.view(-1, self.dim)
         Y = Y.view(-1)
         P = torch.sigmoid(torch.matmul(X, self.W))
-        g = torch.matmul(Y - P, X)
+        if Wb is None:
+            g = torch.matmul(Y - P, X)
+        else:
+            tempW = (Y - P) * Wb
+            g = torch.matmul(tempW, X)
         # objective: max L' = L - lambda * norm2(W)
         # gradient' = gradient - 2 * lambda * W
         if not ridge_lambda is None:
@@ -39,7 +46,8 @@ class LogisticRegression:
             g -= lasso_lambda * torch.sign(self.W)
         if Use_adam:
             self.v = gamma * self.v + (1.0 - gamma) * g
-            self.G = beta * self.G + (1.0 - beta) * torch.sum(g * g)
+            # self.G = beta * self.G + (1.0 - beta) * torch.sum(g * g)
+            self.G = beta * self.G + (1.0 - beta) * (g * g)
             # self.v /= (1.0 - gamma)
             # self.G /= (1.0 - beta)
             g = (self.v / (1.0 - gamma)) / torch.sqrt(self.G / (1.0 - beta) + eps)
@@ -71,7 +79,10 @@ if __name__ == '__main__':
     models = [LogisticRegression(dim=X.shape[1]) for i in range(10)]
     idx = [i for i in range(X.shape[0])]
 
-    lr = 0.1
+    lr = 0.01
+    ridge_lambda = 0.1
+    lasso_lambda = None
+    weighted = True
     for epoch in tqdm(range(100)):
         random.shuffle(idx)
         batch_size = 256
@@ -82,10 +93,21 @@ if __name__ == '__main__':
             Xb = torch.index_select(X, 0, batch_idx)
             Yb = torch.index_select(Y, 0, batch_idx)
             for model_num in range(10):
-                models[model_num].train(Xb, Yb[:, model_num], lr=lr, Use_adam=True)
+                if weighted:
+                    Wb = torch.ones(Yb.shape[0]).cuda()
+                    Wb[Yb[:, model_num]==1] = 9.0
+                    models[model_num].train(Xb, Yb[:, model_num], lr=lr, Use_adam=True, Wb=Wb)
+                else:
+                    if not ridge_lambda is None:
+                        models[model_num].train(Xb, Yb[:, model_num], lr=lr, Use_adam=True, ridge_lambda=ridge_lambda)
+                    elif not lasso_lambda is None:
+                        models[model_num].train(Xb, Yb[:, model_num], lr=lr, Use_adam=True, lasso_lambda=lasso_lambda)
+                    else:
+                        models[model_num].train(Xb, Yb[:, model_num], lr=lr, Use_adam=True)
         if (epoch + 1) % 10 == 0:
             total = [0 for i in range(11)]
             correct = [0 for i in range(11)]
+            acc10 = [0 for i in range(10)]
             for b in tqdm(range(batch_num)):
                 batch_idx = idx[b*batch_size: b*batch_size+batch_size]
                 batch_idx = torch.tensor(batch_idx, dtype=torch.long).cuda()
@@ -103,9 +125,15 @@ if __name__ == '__main__':
                 for number in range(10):
                     total[number] += ground_truth[ground_truth == number].shape[0]
                     correct[number] += torch.sum(predict_label[ground_truth == number] == number).item()
+                    acc10[number] += torch.sum((Pb[:, number] > 0.5) == (ground_truth == number)).item()
             for number in range(10):
-                print('Number : {} : correct / total = {} / {} = {}'.format(number, correct[number], total[number], correct[number] / total[number]))
+                print('Number : {} : correct / total = {} / {} = {} ; independent acc = {}'.format(number, correct[number], total[number], correct[number] / total[number], acc10[number] / total[-1]))
             print('Total ----- correct / total = {} / {} = {}'.format(correct[-1], total[-1], correct[-1] / total[-1]))
+            '''
+            if not lasso_lambda is None:
+                if (epoch + 1) % 20 == 0:
+                    lasso_lambda *= 0.1
+            '''
         # if (epoch + 1) % 25 == 0:
             # lr /= 2
     # Is W sparse ?
@@ -129,7 +157,7 @@ if __name__ == '__main__':
             Xb_neg_proj = models[model_num].proj(Xb[Yb[:, model_num] == 0]).tolist()
             proj_for_plot[model_num][0] += Xb_pos_proj
             proj_for_plot[model_num][1] += Xb_neg_proj
-    with open('./proj_for_plot.pkl', 'wb') as f:
+    with open('./proj_for_plot_weighted.pkl', 'wb') as f:
         pickle.dump(proj_for_plot, f)
 
     # For test
@@ -145,6 +173,7 @@ if __name__ == '__main__':
     batch_num = (X.shape[0] - 1) // batch_size + 1
     total = [0 for i in range(11)]
     correct = [0 for i in range(11)]
+    acc10 = [0 for i in range(10)]
     for b in tqdm(range(batch_num)):
         batch_idx = idx[b*batch_size: b*batch_size+batch_size]
         batch_idx = torch.tensor(batch_idx, dtype=torch.long).cuda()
@@ -162,8 +191,9 @@ if __name__ == '__main__':
         for number in range(10):
             total[number] += ground_truth[ground_truth == number].shape[0]
             correct[number] += torch.sum(predict_label[ground_truth == number] == number).item()
+            acc10[number] += torch.sum((Pb[:, number] > 0.5) == (ground_truth == number)).item()
     for number in range(10):
-        print('Number : {} : correct / total = {} / {} = {}'.format(number, correct[number], total[number], correct[number] / total[number]))
+                print('Number : {} : correct / total = {} / {} = {} ; independent acc = {}'.format(number, correct[number], total[number], correct[number] / total[number], acc10[number] / total[-1]))
     print('Test Total ----- correct / total = {} / {} = {}'.format(correct[-1], total[-1], correct[-1] / total[-1]))
     
     '''

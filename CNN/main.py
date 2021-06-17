@@ -68,7 +68,7 @@ validoader = makedataset(validpath)
 model = ToyNet().cuda()
 opt = optim.Adam(model.parameters(), lr=1e-3)
 lossfunc = nn.NLLLoss()
-scheduler = optim.lr_scheduler.ExponentialLR(opt, gamma=0.98)
+scheduler = optim.lr_scheduler.ExponentialLR(opt, gamma=0.95)
 for epoch in tqdm(range(100)):
     model.train()
     loss_ = []

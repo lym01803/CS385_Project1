@@ -165,7 +165,10 @@ if __name__ == '__main__':
     
     Ps = []
     for num in range(10):
-        Ps.append(models[num].predict(X))
+        P = models[num].predict(X)
+        acc = torch.sum((P > 0.5) == Y[:, num]).item() / P.shape[0]
+        print('Single Acc for Number {} : acc = {}'.format(num, acc))
+        Ps.append(P)
         # print(models[num].Alpha)
     Ps = (torch.stack(Ps).T).cuda()
     # print(Ps.tolist())
