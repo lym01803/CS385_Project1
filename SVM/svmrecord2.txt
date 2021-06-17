@@ -1,0 +1,13 @@
+loading...
+loaded
+Number : 0 : correct / total = 1298 / 1744 = 0.7442660550458715; single acc: 0.9729563614013522
+Number : 1 : correct / total = 4022 / 5099 = 0.7887821141400274; single acc: 0.9491779348494161
+Number : 2 : correct / total = 3458 / 4149 = 0.8334538442998313; single acc: 0.965119852489244
+Number : 3 : correct / total = 1769 / 2882 = 0.6138098542678695; single acc: 0.9507529194837123
+Number : 4 : correct / total = 1943 / 2523 = 0.7701149425287356; single acc: 0.9708819913952059
+Number : 5 : correct / total = 1740 / 2384 = 0.7298657718120806; single acc: 0.9700368776889982
+Number : 6 : correct / total = 1316 / 1977 = 0.6656550328780981; single acc: 0.9694222495390289
+Number : 7 : correct / total = 1561 / 2019 = 0.7731550272412085; single acc: 0.9780654578979717
+Number : 8 : correct / total = 811 / 1660 = 0.48855421686746986; single acc: 0.9630454824830977
+Number : 9 : correct / total = 1082 / 1595 = 0.6783699059561129; single acc: 0.97529963122311
+Total correct / total = 19000 / 26032 = 0.7298709280885064

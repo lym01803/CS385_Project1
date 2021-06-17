@@ -44,7 +44,8 @@ if __name__ == '__main__':
     for number in range(10):
         t = np.sum(Y == number)
         c = np.sum(Predict[Y == number] == number)
-        print('Number : {} : correct / total = {} / {} = {}'.format(number, c, t, c/t))
+        acc_single = np.sum((P[:, number] > 0.5) == (Y == number))
+        print('Number : {} : correct / total = {} / {} = {}; single acc: {}'.format(number, c, t, c/t, acc_single / Y.shape[0]))
         total += t
         correct += c
     print('Total correct / total = {} / {} = {}'.format(correct, total, correct / total))

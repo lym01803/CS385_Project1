@@ -1,0 +1,13 @@
+loading...
+loaded
+Number : 0 : correct / total = 1326 / 1744 = 0.7603211009174312
+Number : 1 : correct / total = 3856 / 5099 = 0.7562267111198274
+Number : 2 : correct / total = 3457 / 4149 = 0.8332128223668354
+Number : 3 : correct / total = 1901 / 2882 = 0.6596113809854268
+Number : 4 : correct / total = 2003 / 2523 = 0.7938961553705906
+Number : 5 : correct / total = 1681 / 2384 = 0.7051174496644296
+Number : 6 : correct / total = 1277 / 1977 = 0.6459281740010117
+Number : 7 : correct / total = 1566 / 2019 = 0.7756315007429421
+Number : 8 : correct / total = 750 / 1660 = 0.45180722891566266
+Number : 9 : correct / total = 1050 / 1595 = 0.658307210031348
+Total correct / total = 18867 / 26032 = 0.7247618315918869

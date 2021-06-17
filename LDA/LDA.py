@@ -32,7 +32,7 @@ class LDA_model:
     def fit(self, eps=1e-4):
         self.n_pos = self.X_pos.shape[0] / (self.X_pos.shape[0] + self.X_neg.shape[0])
         self.n_neg = self.X_neg.shape[0] / (self.X_pos.shape[0] + self.X_neg.shape[0])
-        self.mu_pos = torch.sum(self.X_pos, dim=0) / self.X_pos.shape[0]
+        self.mu_pos = torch.sum(self.X_pos, dim=0) / self.X_pos.shape[0] 
         self.mu_neg = torch.sum(self.X_neg, dim=0) / self.X_neg.shape[0]
         self.Sigma2_pos = torch.matmul(self.X_pos.T, self.X_pos) / self.X_pos.shape[0] - torch.matmul(self.mu_pos.view(-1, 1), self.mu_pos.view(1, -1))
         self.Sigma2_neg = torch.matmul(self.X_neg.T, self.X_neg) / self.X_neg.shape[0] - torch.matmul(self.mu_neg.view(-1, 1), self.mu_neg.view(1, -1))
@@ -58,8 +58,10 @@ class LDA_model:
         # print(p.shape)
         p_pos = - ((p - self.mu_pos_beta) ** 2) / (2 * self.sigma2_pos) 
         p_pos = 1.0 / torch.sqrt(2 * math.pi * self.sigma2_pos) * torch.exp(p_pos)
+        p_pos *= self.n_pos
         p_neg = - ((p - self.mu_neg_beta) ** 2) / (2 * self.sigma2_neg)
         p_neg = 1.0 / torch.sqrt(2 * math.pi * self.sigma2_neg) * torch.exp(p_neg)
+        p_neg *= self.n_neg 
         return p_pos / (p_pos + p_neg)
 
 if __name__ == '__main__':
@@ -89,7 +91,7 @@ if __name__ == '__main__':
         LDAs[-1].fit()
         proj_for_plot.append([LDAs[-1].proj(X[Y==i]).tolist(), LDAs[-1].proj(X[Y!=i]).tolist()])
     
-    with open('./proj_for_plot.pkl', 'wb') as f:
+    with open('./proj_for_plot_modified.pkl', 'wb') as f:
         pickle.dump(proj_for_plot, f)
     
     X = D['test']['data']
