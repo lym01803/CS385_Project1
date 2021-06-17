@@ -157,7 +157,7 @@ if __name__ == '__main__':
             Xb_neg_proj = models[model_num].proj(Xb[Yb[:, model_num] == 0]).tolist()
             proj_for_plot[model_num][0] += Xb_pos_proj
             proj_for_plot[model_num][1] += Xb_neg_proj
-    with open('./proj_for_plot_weighted.pkl', 'wb') as f:
+    with open('./proj_for_plot.pkl', 'wb') as f:
         pickle.dump(proj_for_plot, f)
 
     # For test
