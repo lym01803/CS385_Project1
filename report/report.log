@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/W32TeX) (preloaded format=xelatex 2020.8.12)  18 JUN 2021 13:24
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/W32TeX) (preloaded format=xelatex 2020.8.12)  18 JUN 2021 22:59
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -567,23 +567,230 @@ Underfull \hbox (badness 10000) in paragraph at lines 105--107
 [][]
  []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 144.
 [2]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 144.
+File: fig/4-4.png Graphic file (type bmp)
+<fig/4-4.png>
+File: fig/4-3.png Graphic file (type bmp)
+<fig/4-3.png>
+File: fig/4-2.png Graphic file (type bmp)
+<fig/4-2.png>
+File: fig/4-1.png Graphic file (type bmp)
+<fig/4-1.png>
+File: fig/4-5.png Graphic file (type bmp)
+<fig/4-5.png>
+ [3]
+Underfull \hbox (badness 10000) in paragraph at lines 262--264
+
+ []
+
+[4]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 273.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `superscript' on input line 273.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\top' on input line 273.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\beta' on input line 273.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 273.
+
+File: fig/5-1.png Graphic file (type bmp)
+<fig/5-1.png>
+[5]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 319.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `superscript' on input line 319.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\top' on input line 319.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\beta' on input line 319.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 319.
+
+File: fig/lda/0.png Graphic file (type bmp)
+<fig/lda/0.png>
+File: fig/lda/5.png Graphic file (type bmp)
+<fig/lda/5.png>
+File: fig/lda/1.png Graphic file (type bmp)
+<fig/lda/1.png>
+File: fig/lda/6.png Graphic file (type bmp)
+<fig/lda/6.png>
+File: fig/lda/2.png Graphic file (type bmp)
+<fig/lda/2.png>
+File: fig/lda/7.png Graphic file (type bmp)
+<fig/lda/7.png>
+File: fig/lda/3.png Graphic file (type bmp)
+<fig/lda/3.png>
+File: fig/lda/8.png Graphic file (type bmp)
+<fig/lda/8.png>
+File: fig/lda/4.png Graphic file (type bmp)
+<fig/lda/4.png>
+File: fig/lda/9.png Graphic file (type bmp)
+<fig/lda/9.png>
+File: fig/lr/0.png Graphic file (type bmp)
+<fig/lr/0.png>
+File: fig/lr/0-2.png Graphic file (type bmp)
+<fig/lr/0-2.png>
+File: fig/lr/5.png Graphic file (type bmp)
+<fig/lr/5.png>
+File: fig/lr/5-2.png Graphic file (type bmp)
+<fig/lr/5-2.png>
+File: fig/lr/1.png Graphic file (type bmp)
+<fig/lr/1.png>
+File: fig/lr/1-2.png Graphic file (type bmp)
+<fig/lr/1-2.png>
+File: fig/lr/6.png Graphic file (type bmp)
+<fig/lr/6.png>
+File: fig/lr/6-2.png Graphic file (type bmp)
+<fig/lr/6-2.png>
+File: fig/lr/2.png Graphic file (type bmp)
+<fig/lr/2.png>
+File: fig/lr/2-2.png Graphic file (type bmp)
+<fig/lr/2-2.png>
+File: fig/lr/7.png Graphic file (type bmp)
+<fig/lr/7.png>
+File: fig/lr/7-2.png Graphic file (type bmp)
+<fig/lr/7-2.png>
+File: fig/lr/3.png Graphic file (type bmp)
+<fig/lr/3.png>
+File: fig/lr/3-2.png Graphic file (type bmp)
+<fig/lr/3-2.png>
+File: fig/lr/8.png Graphic file (type bmp)
+<fig/lr/8.png>
+File: fig/lr/8-2.png Graphic file (type bmp)
+<fig/lr/8-2.png>
+File: fig/lr/4.png Graphic file (type bmp)
+<fig/lr/4.png>
+File: fig/lr/4-2.png Graphic file (type bmp)
+<fig/lr/4-2.png>
+File: fig/lr/9.png Graphic file (type bmp)
+<fig/lr/9.png>
+File: fig/lr/9-2.png Graphic file (type bmp)
+<fig/lr/9-2.png>
+[6]
+Underfull \hbox (badness 10000) in paragraph at lines 400--402
+
+ []
+
+
+Overfull \hbox (36.57173pt too wide) detected at line 411
+[][]\OML/cmm/m/it/10 Pr\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 y \OT1/cmr/m/n/10 = +\OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 X[]^^L\OT1/cmr/m/n/10 ) = []
+ []
+
+File: fig/lr/0_weighted.png Graphic file (type bmp)
+<fig/lr/0_weighted.png>
+File: fig/lr/1_weighted.png Graphic file (type bmp)
+<fig/lr/1_weighted.png>
+File: fig/lr/2_weighted.png Graphic file (type bmp)
+<fig/lr/2_weighted.png>
+File: fig/lr/3_weighted.png Graphic file (type bmp)
+<fig/lr/3_weighted.png>
+File: fig/lr/4_weighted.png Graphic file (type bmp)
+<fig/lr/4_weighted.png>
+File: fig/lr/5_weighted.png Graphic file (type bmp)
+<fig/lr/5_weighted.png>
+File: fig/lr/6_weighted.png Graphic file (type bmp)
+<fig/lr/6_weighted.png>
+File: fig/lr/7_weighted.png Graphic file (type bmp)
+<fig/lr/7_weighted.png>
+File: fig/lr/8_weighted.png Graphic file (type bmp)
+<fig/lr/8_weighted.png>
+File: fig/lr/9_weighted.png Graphic file (type bmp)
+<fig/lr/9_weighted.png>
+[7] [8]
+File: fig/svm/1.png Graphic file (type bmp)
+<fig/svm/1.png>
+File: fig/svm/2.png Graphic file (type bmp)
+<fig/svm/2.png>
+
+Underfull \hbox (badness 10000) in paragraph at lines 573--575
+
+ []
+
+File: fig/cnn/1.png Graphic file (type bmp)
+<fig/cnn/1.png>
+[9]
+File: fig/pca/0.png Graphic file (type bmp)
+<fig/pca/0.png>
+File: fig/pca/1.png Graphic file (type bmp)
+<fig/pca/1.png>
+File: fig/pca/2.png Graphic file (type bmp)
+<fig/pca/2.png>
+File: fig/pca/pca.png Graphic file (type bmp)
+<fig/pca/pca.png>
+File: fig/pca/t0.png Graphic file (type bmp)
+<fig/pca/t0.png>
+File: fig/pca/t1.png Graphic file (type bmp)
+<fig/pca/t1.png>
+File: fig/pca/t2.png Graphic file (type bmp)
+<fig/pca/t2.png>
+File: fig/pca/tsne.png Graphic file (type bmp)
+<fig/pca/tsne.png>
+ [10]
+File: fig/pca/kpca0.png Graphic file (type bmp)
+<fig/pca/kpca0.png>
+File: fig/pca/kpca1.png Graphic file (type bmp)
+<fig/pca/kpca1.png>
+File: fig/pca/kpca2.png Graphic file (type bmp)
+<fig/pca/kpca2.png>
+File: fig/pca/kernelpca.png Graphic file (type bmp)
+<fig/pca/kernelpca.png>
+File: fig/pca/cnnpca.png Graphic file (type bmp)
+<fig/pca/cnnpca.png>
+File: fig/pca/cnntsne.png Graphic file (type bmp)
+<fig/pca/cnntsne.png>
+ [11]
+Underfull \hbox (badness 10000) in paragraph at lines 680--681
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 682--683
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 684--685
+
+ []
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 709.
+[12]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 709.
  (./report.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 144.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 144.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 709.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 709.
 Package rerunfilecheck Info: File `report.out' has not changed.
-(rerunfilecheck)             Checksum: E277D076A24F10270A8E1DD67D891473;346.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 144.
+(rerunfilecheck)             Checksum: ED0089337510FCE73BA57F37DA134A4E;2807.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 709.
  ) 
 Here is how much of TeX's memory you used:
- 14609 strings out of 479418
- 212911 string characters out of 5888105
- 486392 words of memory out of 5000000
- 31871 multiletter control sequences out of 15000+600000
- 546469 words of font info for 91 fonts, out of 8000000 for 9000
+ 15008 strings out of 479418
+ 219203 string characters out of 5888105
+ 491045 words of memory out of 5000000
+ 32220 multiletter control sequences out of 15000+600000
+ 546973 words of font info for 94 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 41i,10n,45p,285b,316s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 41i,12n,45p,401b,498s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on report.pdf (2 pages).
+Output written on report.pdf (12 pages).

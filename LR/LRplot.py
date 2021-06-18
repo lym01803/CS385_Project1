@@ -11,7 +11,7 @@ def calc_mu_sigma2(X):
     sigma2 = np.mean(X * X) - mu * mu
     return mu, sigma2
 
-with open('./proj_for_plot.pkl', 'rb') as f:
+with open('./proj_for_plot_weighted.pkl', 'rb') as f:
     proj_for_plot = pickle.load(f)
 
 for idx in range(10):
@@ -26,7 +26,7 @@ for idx in range(10):
     # ax.set_title('LDA for number {}, S = {:.4f}'.format(idx, S))
     ax.set_title('X\\beta values for Logistic Regression, number: {}'.format(idx))
     plt.legend()
-    plt.savefig('./fig/{}.png'.format(idx))
+    plt.savefig('./fig/{}_weighted.png'.format(idx))
     plt.clf()
 
     pos_dist = stats.gaussian_kde(proj_for_plot[idx][0])
@@ -42,5 +42,5 @@ for idx in range(10):
     plt.plot(x, y_sigmoid, label='sigmoid result')
     plt.title('real distribution VS sigmoid result, for LR model, number : {}'.format(idx))
     plt.legend()
-    plt.savefig('./fig/{}-2.png'.format(idx))
+    plt.savefig('./fig/{}_weighted-2.png'.format(idx))
     plt.clf()
