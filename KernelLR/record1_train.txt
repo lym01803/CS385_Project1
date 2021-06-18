@@ -1,0 +1,31 @@
+calculate K matrix
+calculate K matrix
+calculate K matrix
+calculate K matrix
+calculate K matrix
+calculate K matrix
+calculate K matrix
+calculate K matrix
+calculate K matrix
+calculate K matrix
+Single Acc for Number 0 : acc = 1.0
+Single Acc for Number 1 : acc = 1.0
+Single Acc for Number 2 : acc = 1.0
+Single Acc for Number 3 : acc = 1.0
+Single Acc for Number 4 : acc = 1.0
+Single Acc for Number 5 : acc = 1.0
+Single Acc for Number 6 : acc = 1.0
+Single Acc for Number 7 : acc = 1.0
+Single Acc for Number 8 : acc = 1.0
+Single Acc for Number 9 : acc = 1.0
+Number : 0 : correct / total = 684 / 684 = 1.0
+Number : 1 : correct / total = 1926 / 1926 = 1.0
+Number : 2 : correct / total = 1422 / 1422 = 1.0
+Number : 3 : correct / total = 1138 / 1138 = 1.0
+Number : 4 : correct / total = 1067 / 1067 = 1.0
+Number : 5 : correct / total = 955 / 955 = 1.0
+Number : 6 : correct / total = 772 / 772 = 1.0
+Number : 7 : correct / total = 728 / 728 = 1.0
+Number : 8 : correct / total = 673 / 673 = 1.0
+Number : 9 : correct / total = 635 / 635 = 1.0
+Test Total ----- correct / total = 10000 / 10000 = 1.0

@@ -68,8 +68,8 @@ validoader = makedataset(validpath)
 model = ToyNet().cuda()
 opt = optim.Adam(model.parameters(), lr=1e-3)
 lossfunc = nn.NLLLoss()
-scheduler = optim.lr_scheduler.ExponentialLR(opt, gamma=0.95)
-for epoch in tqdm(range(100)):
+# scheduler = optim.lr_scheduler.ExponentialLR(opt, gamma=0.95)
+for epoch in tqdm(range(10)):
     model.train()
     loss_ = []
     for i, (data, label) in tqdm(enumerate(trainloader)):
@@ -81,7 +81,7 @@ for epoch in tqdm(range(100)):
         loss_.append(loss.item())
         loss.backward()
         opt.step()
-    scheduler.step()
+    # scheduler.step()
     print('Averaged loss: ', sum(loss_) / len(loss_))
     if (epoch + 1) % 10 == 0:
         # Valid
@@ -97,5 +97,20 @@ for epoch in tqdm(range(100)):
                 total += res.shape[0]
                 correct += torch.sum(res == label).item()
         print('Acc = correct / total = {} / {} = {}'.format(correct, total, correct / total))
+'''
+model.eval()
+X = torch.zeros(6400, 1024)
+Y = torch.zeros(6400)
+for i, (data, label) in tqdm(enumerate(validoader)):
+    data = data.cuda()
+    label = label.cuda()
+    with torch.no_grad():
+        out = model.lastlayer(data)
+        X[i*64: i*64+64] = out.detach().to('cpu')
+        Y[i*64: i*64+64] = label.detach().to('cpu')
+    if i + 1 == 100:
+        break
 
-
+with open('./cnn.pkl', 'wb') as f:
+    pickle.dump({'X': X, 'Y': Y}, f)
+'''

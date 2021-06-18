@@ -35,8 +35,10 @@ if __name__ == '__main__':
     Y = D['test']['label']
     P = []
     for number in tqdm(range(10)):
-        p = models[number].predict(X)
-        P.append(p + 0.001 * np.random.random(p.shape[0]))
+        # p = models[number].predict(X)
+        # P.append(p + 0.001 * np.random.random(p.shape[0]))
+        p = models[number].decision_function(X).reshape(-1)
+        P.append(p)
     P = np.stack(P).T
     Predict = np.argmax(P, axis=1)
     total = 0

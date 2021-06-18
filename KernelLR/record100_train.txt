@@ -1,0 +1,31 @@
+calculate K matrix
+calculate K matrix
+calculate K matrix
+calculate K matrix
+calculate K matrix
+calculate K matrix
+calculate K matrix
+calculate K matrix
+calculate K matrix
+calculate K matrix
+Single Acc for Number 0 : acc = 0.9727
+Single Acc for Number 1 : acc = 0.9505
+Single Acc for Number 2 : acc = 0.9601
+Single Acc for Number 3 : acc = 0.9297
+Single Acc for Number 4 : acc = 0.9633
+Single Acc for Number 5 : acc = 0.9558
+Single Acc for Number 6 : acc = 0.9589
+Single Acc for Number 7 : acc = 0.972
+Single Acc for Number 8 : acc = 0.9452
+Single Acc for Number 9 : acc = 0.9646
+Number : 0 : correct / total = 552 / 684 = 0.8070175438596491
+Number : 1 : correct / total = 1704 / 1926 = 0.8847352024922118
+Number : 2 : correct / total = 1239 / 1422 = 0.8713080168776371
+Number : 3 : correct / total = 867 / 1138 = 0.7618629173989455
+Number : 4 : correct / total = 896 / 1067 = 0.8397375820056232
+Number : 5 : correct / total = 766 / 955 = 0.8020942408376963
+Number : 6 : correct / total = 598 / 772 = 0.7746113989637305
+Number : 7 : correct / total = 590 / 728 = 0.8104395604395604
+Number : 8 : correct / total = 485 / 673 = 0.7206537890044576
+Number : 9 : correct / total = 470 / 635 = 0.7401574803149606
+Test Total ----- correct / total = 8167 / 10000 = 0.8167
