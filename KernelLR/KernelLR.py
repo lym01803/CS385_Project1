@@ -22,9 +22,10 @@ class KernelLR:
 
         self.v = torch.zeros(self.X.shape[0]).cuda()
         self.v.requires_grad = False
-        self.G = torch.tensor(0.0).cuda()
+        # self.G = torch.tensor(0.0).cuda()
+        # self.G.requires_grad = False
+        self.G = torch.zeros(self.X.shape[0]).cuda()
         self.G.requires_grad = False
-
 
     def fit(self, max_epoch=500, Use_Adam=True, lr=1.0, gamma=0.9, beta=0.999, eps=1e-4):
         X = self.X
@@ -62,7 +63,8 @@ class KernelLR:
                 g = torch.matmul(Kb.T, Yb - Pb)
                 if Use_Adam:
                     self.v = gamma * self.v + (1.0 - gamma) * g
-                    self.G = beta * self.G + (1.0 - beta) * torch.sum(g * g)
+                    # self.G = beta * self.G + (1.0 - beta) * torch.sum(g * g)
+                    self.G = beta * self.G + (1.0 - beta) * (g * g)
                     g = (self.v / (1.0 - gamma)) / torch.sqrt(self.G / (1.0 - beta) + eps)
                 self.Alpha += lr * g
             if epoch % 100 == 0:
@@ -138,7 +140,7 @@ if __name__ == '__main__':
     Y = torch.tensor(torch.from_numpy(Y), dtype=torch.float32).cuda()
     models = []
     for num in tqdm(range(10)):
-        models.append(KernelLR(X, Y[:, num]))
+        models.append(KernelLR(X, Y[:, num], w=10))
         models[num].fit()
     
     X = D['test']['data'][:sample]
@@ -156,6 +158,7 @@ if __name__ == '__main__':
         [-3.5, -3.7]
     ])
     '''
+    
     X = np.hstack((X.reshape(-1, X.shape[1]), np.ones((X.shape[0], 1))))
     X = torch.tensor(torch.from_numpy(X), dtype=torch.float32).cuda()
     Y = D['test']['label'][:sample]

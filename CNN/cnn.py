@@ -49,4 +49,7 @@ class ToyNet(nn.Module):
         x = self.logsoftmax(x)
         return x
 
-
+    def lastlayer(self, x):
+        x = self.ConvBlock(x)
+        x = x.view(-1, 1024)
+        return x
