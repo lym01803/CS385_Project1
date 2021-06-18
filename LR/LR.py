@@ -80,9 +80,9 @@ if __name__ == '__main__':
     idx = [i for i in range(X.shape[0])]
 
     lr = 0.01
-    ridge_lambda = 0.1
+    ridge_lambda = None
     lasso_lambda = None
-    weighted = True
+    weighted = False
     for epoch in tqdm(range(100)):
         random.shuffle(idx)
         batch_size = 256
